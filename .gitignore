@@ -1,5 +1,6 @@
 # Qt creator files
 *.user
+*.pro.user.*
 
 # Prerequisites
 *.d
