@@ -7,12 +7,12 @@
 
 using namespace std;
 
-class SSN_Launcher
+class SSN_Launcher_Lib
 {
 
 public:
     wstring getWorkingDirectory();
-    SSN_Launcher();
+    SSN_Launcher_Lib();
 };
 
 #endif // SSN_LAUNCHER_H
