@@ -9,6 +9,10 @@ using namespace std;
 
 class SSN_Launcher_Lib
 {
+namespace SSN_Launcher_Lib_Static {
+    namespace Environment {
+        QString getWorkingDirectory(){
+            auto pathFromQt = QCoreApplication::applicationDirPath();
 
 public:
     wstring getWorkingDirectory();
