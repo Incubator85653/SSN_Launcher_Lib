@@ -7,16 +7,24 @@
 
 using namespace std;
 
-class SSN_Launcher_Lib
-{
 namespace SSN_Launcher_Lib_Static {
     namespace Environment {
         QString getWorkingDirectory(){
             auto pathFromQt = QCoreApplication::applicationDirPath();
 
-public:
-    wstring getWorkingDirectory();
-    SSN_Launcher_Lib();
-};
+            return pathFromQt;
+        }
+    }
+
+    namespace Type {
+        QString qString_fromWstring(wstring input){
+            return QString::fromWCharArray(input.c_str());
+        }
+        wstring wstring_fromQString(QString input){
+
+            return input.toStdWString();
+        }
+    }
+}
 
 #endif // SSN_LAUNCHER_H
