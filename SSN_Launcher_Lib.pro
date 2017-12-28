@@ -29,3 +29,15 @@ unix {
     target.path = /usr/lib
     INSTALLS += target
 }
+
+# EliteGaming2017
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../EliteGaming2017/build/release/ -lEliteGaming2017
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../EliteGaming2017/build/debug/ -lEliteGaming2017
+
+INCLUDEPATH += $$PWD/../../EliteGaming2017/src
+DEPENDPATH += $$PWD/../../EliteGaming2017/src
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../EliteGaming2017/build/release/libEliteGaming2017.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../EliteGaming2017/build/debug/libEliteGaming2017.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../EliteGaming2017/build/release/EliteGaming2017.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../EliteGaming2017/build/debug/EliteGaming2017.lib
